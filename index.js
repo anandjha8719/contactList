@@ -22,10 +22,19 @@ var contactList = [
 
 
 app.get('/', function(req, res){
-    res.render('home', {
+    return res.render('home', {
         title: "Contact List",
         contact_list: contactList
-    })
+    });
+});
+
+
+app.post('/create-contact', function(req, res){
+    contactList.push({
+        name: req.body.name,
+        phone: req.body.phone
+    });
+    return res.redirect('back');
 });
 
 

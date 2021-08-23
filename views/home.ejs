@@ -17,12 +17,24 @@
             Contact List
         </p>
         <ul>
-            <% for (let i in contact_list) { %>
-            <li class="contact">
-                <p class="name"><%=i.name%></p>
-                <p class="phone"><%=i.phone%></p>
-            </li>
+            <% for (let i of contact_list) { %>
+                <li class="contact">
+                    <p class="name"><%= i.name %></p>
+                    <p class="phone"><%= i.phone %></p>
+                </li>
+                <p class="delete">
+                    <a href="">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </p>
+            <%}%>
         </ul>
     </div>
+    <form action="/create-contact" method="POST">
+        <input type="text" name="name" placeholder="Enter Name..." required>
+        <input type="text" name="phone" placeholder="Enter Phone..." required>
+
+        <button type="submit">Add</button>
+    </form>
 </body>
 </html>
