@@ -11,13 +11,13 @@ Web Application to add, delete your contact list.
 Clone the project
 
 ```bash
-  git clone https://github.com/anandjha8719/contactList.git
+  git clone https://github.com/anandjha8719/savensend.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd savensend
 ```
 
 Install dependencies:- 
