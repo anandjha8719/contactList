@@ -67,6 +67,17 @@ app.post('/create-contact', function(req, res){
 
 });
 
+app.get('/delete-contact', function(req, res){
+    let id = req.query.id;
+    Contact.findByIdAndDelete(id, function(err){
+        if(err){
+            console.log('error occured in deleting from DB');
+            return;
+        }
+        return res.redirect('back');
+    });
+});
+
 
 app.listen(port, function(err){
     if(err){
