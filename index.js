@@ -2,6 +2,10 @@ const express = require('express');
 const path = require('path');
 const port = 8000;
 
+const db = require('./config/mongoose');
+const Contact = require('./models/contact');
+
+
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -22,19 +26,45 @@ var contactList = [
 
 
 app.get('/', function(req, res){
-    return res.render('home', {
-        title: "Contact List",
-        contact_list: contactList
+
+    Contact.find({}, function(err, myContacts){
+        if(err){
+            console.log('Error in fetching data from DB');
+            return;
+        }
+        return res.render('home', {
+            title: "Contact List",
+            contact_list: myContacts
+        });
     });
+
+
+    // return res.render('home', {
+    //     title: "Contact List",
+    //     contact_list: contactList
+    // });
 });
 
 
 app.post('/create-contact', function(req, res){
-    contactList.push({
+    // contactList.push({
+    //     name: req.body.name,
+    //     phone: req.body.phone
+    // });
+    // return res.redirect('back');
+
+    Contact.create({
         name: req.body.name,
         phone: req.body.phone
+    }, function(err, newContact){
+        if(err){
+            console.log('some error occured in creating the contact');
+            return;
+        }
+        console.log('*****', newContact);
+        return res.redirect('back');
     });
-    return res.redirect('back');
+
 });
 
 
