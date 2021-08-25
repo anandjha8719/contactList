@@ -63,6 +63,17 @@ body{
     margin-left: 6px;
 }
 
+@media (min-width: 740px){
+    .container{
+        width: 50%;
+        margin-left: 24%;
+        margin-right: 24%;
+    }
+   
+
+    
+}
+
 .form{
     
     display: flex;
@@ -98,4 +109,52 @@ body{
 }
 .add-button:hover{
     background-color: white;
+}
+@media(min-width: 740px){
+    .form{
+        width: 50%;
+        margin-left: 24%;
+        margin-right: 24%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .name-input{
+        width: 42%;
+        margin-bottom: 2px;
+        margin-top: 5px;
+        height: 6vh;
+        border: none;
+        display: inline;
+        background-color: rgb(231, 227, 248);
+        outline: none;
+        border-bottom: 3px solid rgb(86, 247, 81);
+    }
+    .phone-input{
+        width: 42%;
+        margin-bottom: 2px;
+        margin-top: 5px;
+        height: 6vh;
+        border: none;
+        display: inline;
+        background-color: rgb(231, 227, 248);
+        outline: none;
+        border-bottom: 3px solid rgb(86, 247, 81);
+    }
+
+    .add-button{
+        width: 10%;
+        height: 6vh;
+        border: none;
+        outline: none;
+        margin-bottom: 2px;
+        margin-top: 5px;
+        border-radius: 6px;
+        background-color: rgb(86, 247, 81);
+    }
+    .add-button:hover{
+        background-color: white;
+        cursor: pointer;
+        color: rgb(86, 247, 81);
+        border-bottom: 3px solid rgb(86, 247, 81);
+    }
 }
