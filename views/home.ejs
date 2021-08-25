@@ -8,15 +8,15 @@
         <%=title%>
     </title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
     <div class="container">
         <p class="header">
             <i class="far fa-address-book"></i>
-            Contact List
+            Contacts
         </p>
-        <ul>
+        <ul class="one-contact">
             <% for (let i of contact_list) { %>
                 <li class="contact">
                     <p class="name"><%= i.name %></p>
@@ -30,11 +30,11 @@
             <%}%>
         </ul>
     </div>
-    <form action="/create-contact" method="POST">
-        <input type="text" name="name" placeholder="Enter Name..." required>
-        <input type="text" name="phone" placeholder="Enter Phone..." required>
+    <form action="/create-contact" method="POST" class="form">
+        <input type="text" name="name" placeholder="Enter Name..." class="name-input" required>
+        <input type="text" name="phone" placeholder="Enter Phone..." class="phone-input" required>
 
-        <button type="submit">Add</button>
+        <button type="submit" class="add-button">Add</button>
     </form>
 </body>
 </html>

@@ -39,19 +39,10 @@ app.get('/', function(req, res){
     });
 
 
-    // return res.render('home', {
-    //     title: "Contact List",
-    //     contact_list: contactList
-    // });
 });
 
 
 app.post('/create-contact', function(req, res){
-    // contactList.push({
-    //     name: req.body.name,
-    //     phone: req.body.phone
-    // });
-    // return res.redirect('back');
 
     Contact.create({
         name: req.body.name,
