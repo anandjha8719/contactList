@@ -4,8 +4,8 @@
   "description": "ContactListandMessaging",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "start": "nodemon index.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "anandjha8719",
@@ -15,5 +15,8 @@
     "express": "^4.17.1",
     "mongoose": "^5.13.8",
     "nodemon": "^2.0.12"
+  },
+  "endines": {
+    "node": ">=10.0.0"
   }
 }
